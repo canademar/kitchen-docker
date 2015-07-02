@@ -6,8 +6,8 @@ require 'kitchen/driver/docker_version'
 Gem::Specification.new do |spec|
   spec.name          = 'kitchen-docker'
   spec.version       = Kitchen::Driver::DOCKER_VERSION
-  spec.authors       = ['Sean Porter']
-  spec.email         = ['portertech@gmail.com']
+  spec.authors       = ['Sean Porter modified by cnavarro']
+  spec.email         = ['support@stratio.com']
   spec.description   = %q{A Docker Driver for Test Kitchen}
   spec.summary       = spec.description
   spec.homepage      = 'https://github.com/portertech/kitchen-docker'

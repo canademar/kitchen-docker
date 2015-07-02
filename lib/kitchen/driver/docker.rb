@@ -104,6 +104,23 @@ module Kitchen
           rm_image(state)
         end
       end
+     
+      def verify(state)
+        e = nil
+        Kitchen::SSH.new(*build_ssh_args(state)) do |conn|
+          run_remote(busser.sync_cmd, conn)
+          begin
+            run_remote(busser.run_cmd, conn)
+          rescue Exception => e
+          end
+        end
+        copy_command = "cp #{state[:container_id]}:/tmp/serverspec-result.xml ."
+        docker_command(copy_command)
+        if e
+          raise e
+        end
+      end
+
 
       def remote_socket?
         config[:socket] ? socket_uri.scheme == 'tcp' : false

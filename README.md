@@ -1,6 +1,7 @@
 # Kitchen::Docker
 
 A Test Kitchen Driver for Docker.
+Forked to copy a results file into the host machine.
 
 ## Requirements
 
